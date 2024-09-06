@@ -29,3 +29,15 @@ function generateMultipleBoxShadow(n) {
   document.documentElement.style.setProperty('--shadows-medium', generateMultipleBoxShadow(200));
   document.documentElement.style.setProperty('--shadows-big', generateMultipleBoxShadow(100));
   
+  let scrollTimeout;
+
+  // Function to change the animation speed when scrolling starts
+  function speedUpStars() {
+    document.querySelector('#stars').style.animationDuration = '20s';  // Faster speed
+    document.querySelector('#stars2').style.animationDuration = '40s'; // Faster speed
+    document.querySelector('#stars3').style.animationDuration = '60s'; // Faster speed
+  }
+    
+  // Add scroll event listener
+  window.addEventListener('scroll', speedUpStars);
+  
