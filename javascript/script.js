@@ -1,12 +1,3 @@
-function about_me_func() {
-    var x = document.getElementById("about_me");
-    if(x.style.display == "block"){
-        x.style.display = "none"; 
-    } else {
-        x.style.display = "block"; 
-    }
-}
-
 setTimeout(function() {
     document.querySelector('.name').style.display = 'none';
     document.querySelector('.name2 span2:nth-child(1)').style.display = 'inline-block';
@@ -16,3 +7,25 @@ setTimeout(function() {
     document.querySelector('.name2 span2:nth-child(5)').style.display = 'inline-block';
   }, 2500);
 
+  
+  window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    document.getElementById('stars').style.transform = 'translateY(' + scrollTop * 0.5 + 'px)';
+    document.getElementById('stars2').style.transform = 'translateY(' + scrollTop * 0.3 + 'px)';
+    document.getElementById('stars3').style.transform = 'translateY(' + scrollTop * 0.1 + 'px)';
+});
+
+function generateMultipleBoxShadow(n) {
+    let shadow = '';
+    for (let i = 0; i < n; i++) {
+      const x = Math.floor(Math.random() * 2000);
+      const y = Math.floor(Math.random() * 2000);
+      shadow += `${x}px ${y}px #FFF${i < n - 1 ? ',' : ''}`;
+    }
+    return shadow;
+  }
+  
+  document.documentElement.style.setProperty('--shadows-small', generateMultipleBoxShadow(700));
+  document.documentElement.style.setProperty('--shadows-medium', generateMultipleBoxShadow(200));
+  document.documentElement.style.setProperty('--shadows-big', generateMultipleBoxShadow(100));
+  
