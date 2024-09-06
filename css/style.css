@@ -33,7 +33,8 @@ section {
   width: 100%;  
   height: 100vh;
   box-sizing: border-box;
-  grid-template-rows: 100px 200px; /* First row is 100px high, second row is 200px high */
+  /* change to edit size */
+  grid-template-rows: 100px 100px; /* First row is 100px high, second row is 200px high */
 }
 
 /* title goes here */
@@ -54,48 +55,26 @@ section {
   color: white;
 }
 
-.about title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  font-size: 100px;
-}
-
-/* Content styling (e.g., paragraph) */
-.about p {
-  color: white; /* Adjust text color to match your design */
-  font-size: 20px; /* Adjust the font size as needed */
-  width: 100%; /* Ensure paragraph takes full width */
-  text-align: center; /* Center text horizontally */
-  display: block; /* Ensure the text is treated as a block element */
-}
-/* project section css goes here */
-.project {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-}
 
 /* links for contacts */
 .links {
   background-color: #0000005c;
-  display: flex;
+  display: block;
   justify-content: center;
   position: relative;
   height: 50vh;
 }
 
+.contact{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 125px 110px 125px; /* First row is 100px high, second row is 200px high */
+}
+
 .image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  display: inline-block;
+  width: 100%;
+  padding: 20px;  
 }
 
 img:hover {
@@ -114,18 +93,12 @@ img:hover {
   display: flex;
   justify-content: center;
   position: relative;
-}
-
-.about_me {
-  text-align: center;
-  display: none;
-  position: relative;
-  z-index: 10;
+  color : #e3f05184;
 }
 
 .about_btn:hover {
   border-radius: 10px;
-  border: 2px solid #5c19f9;
+  border: 2px solid #e3f05184;
   align-self: center;
 }
 
