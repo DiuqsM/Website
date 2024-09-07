@@ -40,4 +40,12 @@ function generateMultipleBoxShadow(n) {
     
   // Add scroll event listener
   window.addEventListener('scroll', speedUpStars);
+
+  // Function to reset the animation speed when scrolling stops
+  function scrollToSection(event, target) {
+    event.preventDefault(); // Prevent the default anchor click behavior
+    const element = document.querySelector(target);
+    element.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target element
+  }
+  
   
