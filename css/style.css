@@ -35,11 +35,11 @@ section {
   height: 100vh;
   box-sizing: border-box;
   /* change to edit size */
-  grid-template-rows: 100px 100px; /* First row is 100px high, second row is 200px high */
+  grid-template-rows: 100px 100px 100px;/* First row is 100px high, second row is 200px high */
 }
 
 a:link, a:visited {
-  color: #483eff;
+
   text-decoration: none; /* Remove underline if needed */
 }
 
@@ -53,7 +53,7 @@ a:link, a:visited {
 
 .section_title {
   font-family: 'Montserrat';
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -159,12 +159,6 @@ img:hover {
   justify-content: center;
   position: relative;
   color : #483eff;
-
-  background: linear-gradient(to right, #483eff 50%, rgba(255, 255, 255, 0) 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: all .5s ease-out;
-
 }
 .about_btn:hover {
   background-position: left bottom;
