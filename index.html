@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script type = "text/javascript" src = "javascript/script.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name = "description" content = "portfolio for Rihui Lu" >
@@ -8,10 +7,10 @@
     <meta name="author" content="Rihui Lu">
     <meta name = "keywords" content = "portfolio, Rihui Lu">
     <title>Portfolio</title>
-    
     <link rel = "stylesheet" href="css/style.css" >
 </head>
 <body> 
+    <script type = "text/javascript" src = "javascript/script.js" defer></script>
     <div id='stars'></div>
     <div id='stars2'></div>
     <div id='stars3'></div>
@@ -43,34 +42,38 @@
     
     </section>
 
-    <div class = "nav_bar"> 
-        <li class = "nav_bar_item"> 
-            <a href="#title"> Home </a>
-        </li>
-        <li class = "nav_bar_item"> 
-            <a href="#about"> About </a>
-        </li>
-        <li class = "nav_bar_item"> 
-            <a href="#projects"> Projects </a>
-        </li>
-        <li class = "nav_bar_item"> 
-            <a href="#links"> Contacts </a>
-        </li>
+    <div class = "nav_bar">
+        <div class = "nav_bar_group"> 
+            <li class = "nav_bar_item" id = "nav_title"> 
+                <a href="#title"> Home </a>
+            </li>
+            <li class = "nav_bar_item" id = "nav_about"> 
+                <a href="#about"> About </a>
+            </li>
+            <li class = "nav_bar_item" id = "nav_projects"> 
+                <a href="#projects"> Projects </a>
+            </li>
+            <li class = "nav_bar_item" id = "nav_links"> 
+                <a href="#links"> Contacts </a>
+            </li>
+        </div>
     </div>
 
         <!--About me section-->
     <section class = "about" id = "about"> 
         <div></div>
         <div class = "section_title"> About </div>
-        <div class = "Text_area">
+        <!-- picture above the about me text 
+         about me area-->
+         <!-- the skills area -->
+        <div class = "about_area">
              I am a student 
-             <div> Img area</div>
+             <div> Img area </div>
         </div>
     </section>
 
     <!--Project List-->
     <section class="projects" id = "projects">
-        <div></div>
         <div class = "section_title"> Projects </div>
         <div class = "project_sections">
             <h3> Project 1: </h3>

@@ -8,13 +8,6 @@ setTimeout(function() {
   }, 2500);
 
   
-  window.addEventListener('scroll', function () {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    document.getElementById('stars').style.transform = 'translateY(' + scrollTop * 0.5 + 'px)';
-    document.getElementById('stars2').style.transform = 'translateY(' + scrollTop * 0.3 + 'px)';
-    document.getElementById('stars3').style.transform = 'translateY(' + scrollTop * 0.1 + 'px)';
-});
-
 function generateMultipleBoxShadow(n) {
     let shadow = '';
     for (let i = 0; i < n; i++) {
@@ -41,11 +34,38 @@ function generateMultipleBoxShadow(n) {
   // Add scroll event listener
   window.addEventListener('scroll', speedUpStars);
 
-  // Function to reset the animation speed when scrolling stops
-  function scrollToSection(event, target) {
-    event.preventDefault(); // Prevent the default anchor click behavior
-    const element = document.querySelector(target);
-    element.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target element
-  }
-  
-  
+  //for overservers
+  const sections = document.querySelectorAll("section");
+  const navItems = document.querySelectorAll(".nav_bar_item");
+  // let currentActiveId = 'title'; // Variable to store the current active section ID
+  let currentActiveId = ''; // Variable to store the current active section ID
+
+  // Create an intersection observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // const navItem = document.querySelector(
+        //   `.nav_bar_item a[href="#${currentActiveId}"]`
+        // ).parentElement;
+        
+        const navItem = document.querySelector(
+          `.nav_bar_item a[href="#${currentActiveId}"]`
+        );
+
+        if (entry.isIntersecting) {
+          // When a new section becomes intersecting, update current active section
+          currentActiveId = entry.target.id;
+          console.log("changing items to : " + currentActiveId + " with navItem: " + navItem.className);
+          navItems.forEach((item) => item.classList.remove("nav_bar_item--active"));
+          navItem.classList.add("nav_bar_item--active");
+        }
+        console.log(entry.isIntersecting + " " + entry.target.id);
+
+      });
+    },
+    {
+      threshold: 0.5, // Adjust this value to determine when a section is "active"
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
