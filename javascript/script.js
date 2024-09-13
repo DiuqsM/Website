@@ -35,27 +35,22 @@ function generateMultipleBoxShadow(n) {
   window.addEventListener('scroll', speedUpStars);
 
   //for overservers
-  const sections = document.querySelectorAll("section");
+  const sections = ['#title', '#about', '#links'];
   const navItems = document.querySelectorAll(".nav_bar_item");
   // let currentActiveId = 'title'; // Variable to store the current active section ID
-  let currentActiveId = ''; // Variable to store the current active section ID
 
   // Create an intersection observer
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        // const navItem = document.querySelector(
-        //   `.nav_bar_item a[href="#${currentActiveId}"]`
-        // ).parentElement;
-        
+
         const navItem = document.querySelector(
-          `.nav_bar_item a[href="#${currentActiveId}"]`
-        );
+          `.nav_bar_item a[href="#${entry.target.id}"]`
+        ).parentElement;
 
         if (entry.isIntersecting) {
           // When a new section becomes intersecting, update current active section
-          currentActiveId = entry.target.id;
-          console.log("changing items to : " + currentActiveId + " with navItem: " + navItem.className);
+    
           navItems.forEach((item) => item.classList.remove("nav_bar_item--active"));
           navItem.classList.add("nav_bar_item--active");
         }
@@ -68,4 +63,27 @@ function generateMultipleBoxShadow(n) {
     }
   );
 
-  sections.forEach((section) => observer.observe(section));
+  const observer2 = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+
+        const navItem = document.querySelector(
+          `.nav_bar_item a[href="#${entry.target.id}"]`
+        ).parentElement;
+
+        if (entry.isIntersecting) {
+          // When a new section becomes intersecting, update current active section
+    
+          navItems.forEach((item) => item.classList.remove("nav_bar_item--active"));
+          navItem.classList.add("nav_bar_item--active");
+        }
+        console.log(entry.isIntersecting + " " + entry.target.id);
+
+      });
+    },
+    {
+      threshold: 0.5, // Adjust this value to determine when a section is "active"
+    }
+  );
+  sections.forEach((section) => observer.observe(document.querySelector(section)));
+  observer2.observe(document.querySelector("#projects"))
