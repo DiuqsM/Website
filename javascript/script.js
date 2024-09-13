@@ -82,7 +82,7 @@ function generateMultipleBoxShadow(n) {
       });
     },
     {
-      threshold: 0.5, // Adjust this value to determine when a section is "active"
+      threshold: 0.8, // Adjust this value to determine when a section is "active"
     }
   );
   sections.forEach((section) => observer.observe(document.querySelector(section)));
