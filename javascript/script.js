@@ -31,7 +31,7 @@ function generateMultipleBoxShadow(n) {
     document.querySelector('#stars3').style.animationDuration = '60s'; // Faster speed
   }
     
-  // Add scroll event listener
+  // Add scroll event listener for the stars
   window.addEventListener('scroll', speedUpStars);
 
   //for overservers
@@ -54,8 +54,6 @@ function generateMultipleBoxShadow(n) {
           navItems.forEach((item) => item.classList.remove("nav_bar_item--active"));
           navItem.classList.add("nav_bar_item--active");
         }
-        console.log(entry.isIntersecting + " " + entry.target.id);
-
       });
     },
     {
@@ -63,6 +61,7 @@ function generateMultipleBoxShadow(n) {
     }
   );
 
+  //observer for project sections
   const observer2 = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -73,12 +72,9 @@ function generateMultipleBoxShadow(n) {
 
         if (entry.isIntersecting) {
           // When a new section becomes intersecting, update current active section
-    
           navItems.forEach((item) => item.classList.remove("nav_bar_item--active"));
           navItem.classList.add("nav_bar_item--active");
         }
-        console.log(entry.isIntersecting + " " + entry.target.id);
-
       });
     },
     {

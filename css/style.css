@@ -82,9 +82,26 @@ section {
 }
 @media (max-width: 1000px) {
   .about_area {
-      flex-direction:row;
+    flex-direction:column
   }
 }
+
+.aboutleft{
+  width: 45%;
+}
+
+/* skills */
+.skills{
+  /* background-image: linear-gradient(#1a1a1a, #1a1a1a),radial-gradient(circle at top left, #ffffff, #ff4d5a);
+  background-clip: content-box, border-box;
+  border: 2px solid transparent; */
+  width: 45%;
+}
+  
+.skills_row{
+
+}
+
 
 /* navbar */
 .nav_bar {
@@ -104,8 +121,8 @@ section {
 .nav_bar_group {
   display: flex;
   margin-right: 1rem;
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 50;
   letter-spacing: 1px;
   color: #ffffff;
 }
@@ -130,20 +147,6 @@ section {
   justify-content: space-between;
 }
 
-/* skills */
-.skills{
-  background-image: linear-gradient(#1a1a1a, #1a1a1a),radial-gradient(circle at top left, #ffffff, #ff4d5a);
-  background-clip: content-box, border-box;
-  border: 2px solid transparent;
-}
-
-.skills{
-  display: flex;
-}
-  
-.skills_row{
-
-}
   
 /* links for contacts */
 .links {
