@@ -9,6 +9,36 @@ html {
   scroll-behavior: smooth
 }
 
+@media (max-width: 1500px) {
+  html {
+      font-size:57.25%
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+      font-size:50%
+  }
+}
+
+@media (max-width: 770px) {
+  html {
+      font-size:43.75%
+  }
+}
+
+@media (max-width: 615px) {
+  html {
+      font-size:40%
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+      font-size:35%
+  }
+}
+
 body {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
@@ -36,7 +66,7 @@ section {
   align-items: center;
   display: flex;
   width: 100%;  
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
 }
 
@@ -77,6 +107,7 @@ section {
   display: flex;
   height: 100%;
   width: 100%;
+  align-items: center;
   justify-content: space-between;
 
 }
@@ -87,21 +118,117 @@ section {
 }
 
 .aboutleft{
-  width: 45%;
+  width: 80%;
+  justify-content: center;
+  /* to prevennt stars from overlapping the images */
+  z-index: 10;
+}
+
+
+.pfp{
+width: 30%;
+justify-content: flex-start;
+align-items: center
+}
+
+
+.aboutText{
+  line-height: 1.5;
+  font-size: 1.25rem;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+/* for different screens */
+@media (max-width: 1000px) {
+  .links {
+    width: 110%;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav_bar{
+    width: 105%;
+  }
+}
+
+@media (max-width: 600px) {
+  /* about */
+  .aboutleft{
+    width: 70%;
+  }
+
+  .aboutText {
+      width: 100%;
+      font-size: 2rem;
+  }
+
+  /* skills */
+  .skills{
+    /* width: 100%; */
+  }
+  .skill_img{
+    width: 60px;
+    height: 60px;  
+  }
+  .skills_List{
+    margin-left: 10%;
+  }
+  .skill_img{
+  }
+  .skill_name{
+    font-size: 10px;
+    }  
+}
+
+@media (max-height: 700px) {
+  .aboutText {
+      width: 100%;
+      font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 700px){
+  .pfp{
+    width: 100%;
+  }
 }
 
 /* skills */
 .skills{
-  /* background-image: linear-gradient(#1a1a1a, #1a1a1a),radial-gradient(circle at top left, #ffffff, #ff4d5a);
-  background-clip: content-box, border-box;
-  border: 2px solid transparent; */
-  width: 45%;
-}
-  
-.skills_row{
-
+  width: 50%;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.skills_List{
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 10px;
+  margin-right: 5%;
+}
+
+.skills_List:not(:last-child) {
+  margin-right: 25px
+}
+
+.skills_item{
+  border: 2.5px solid #ffffff;
+  border-radius: 5px;
+  margin-top: 25px;
+  width: 10rem;
+}
+
+.skill_img{
+  width: 70%;
+  height: 70%;
+}
 
 /* navbar */
 .nav_bar {
@@ -111,16 +238,18 @@ section {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 6rem;
+  height: 3rem;
+  width: 100%;
   border-bottom: 1px solid #1a1a1a;
   background-color: rgba(40,40,40,0.95);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 4px rgba(0,0,0,0.3);
   z-index: 99999999999
 }
+
 .nav_bar_group {
   display: flex;
-  margin-right: 1rem;
+  margin-right: 2rem;
   font-size: 1rem;
   font-weight: 50;
   letter-spacing: 1px;
@@ -146,7 +275,60 @@ section {
   width: 100%;
   justify-content: space-between;
 }
+.project_num{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin-left: 10%;
+  justify-content: space-between;
+}
 
+.project_left{
+  width: 30%;
+  justify-content: center;
+  /* to prevennt stars from overlapping the images */
+  z-index: 10;
+}
+
+.proj_title{
+justify-content: flex-start;
+align-items: center;
+
+ margin-left: auto;
+ margin-right: auto;
+ font-size: 1.5rem;
+ width: 75%;
+}
+
+.proj_text{
+  font-size: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.project_right{
+  width: 80%;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.proj_img_box{
+  width: 80%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project_img{
+  width: 100%;
+  height: 100%;
+}
   
 /* links for contacts */
 .links {
@@ -155,7 +337,7 @@ section {
   justify-content: center;
   position: relative;
   width: 100%;
-  height: 30vh;
+  min-height: 40vh;
 }
 
 .contact{
@@ -169,7 +351,7 @@ section {
   padding: 20px;
 }
 
-img:hover {
+.link_img:hover {
   transform: scale(1.2);
 }
 
@@ -195,7 +377,10 @@ img:hover {
   color: rgb(255, 255, 255);
   transition: all .6s ease-out;
   display: block;
+}
 
+.button_text:hover{
+  color: #f7ff0c; 
 }
 
 /* below is for the name animation */

@@ -83,3 +83,74 @@ function generateMultipleBoxShadow(n) {
   );
   sections.forEach((section) => observer.observe(document.querySelector(section)));
   observer2.observe(document.querySelector("#projects"))
+
+  //add skills list 
+  const col1 = ["Java" , "HTML", "CSS"];
+  const col2 = ["C++", "Python", "Drogon"];
+  const col3 = ["Git", "Node.js", "JavaScript"];
+
+  function addskill(lists){
+    //for the list skills list
+    const col = document.createElement('div');
+    col.classList.add('skills_List');
+
+    lists.forEach((s) => {
+      
+      const newDiv = document.createElement('div');
+      //appends the class for css
+      newDiv.classList.add('skills_item'); 
+
+      //appends the images to div
+      resize(s, newDiv);
+      
+      //appends the names to div
+      const textDiv = document.createElement('div');
+      textDiv.classList.add('skill_name');
+      const textContent = document.createTextNode(s);
+      textDiv.appendChild(textContent);
+      newDiv.appendChild(textDiv);
+
+      //appends the items to the colom
+      col.appendChild(newDiv);
+    });
+
+    //appends to the skills sections in the html 
+    const skill = document.getElementById("skills"); 
+    skill.appendChild(col);
+
+  };
+
+  addskill(col1);
+  addskill(col2);
+  addskill(col3);
+
+  //resize all the images
+
+function resize(name, div){
+  const img = new Image();
+  img.src = `images/${name}.png`;
+
+  img.onload = function() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set the desired dimensions
+    const newWidth = 100; 
+    const newHeight = 100; 
+
+    canvas.width = newWidth;
+    canvas.height = newHeight;
+
+    // Draw the image onto the canvas with the new dimensions
+    ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+    // Get the resized image data URL
+    const resizedImageData = canvas.toDataURL('image/png');
+
+    // Do something with the resized image, e.g., display it
+    const resizedImage = document.createElement('img');
+    resizedImage.classList.add('skill_img')
+    resizedImage.src = resizedImageData;
+    div.appendChild(resizedImage);
+  };
+}
