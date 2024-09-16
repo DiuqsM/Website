@@ -374,6 +374,9 @@ font-weight: bold;
   }
 
   /* nav */
+  .nav_bar{
+    height: 5vh;
+  }
   .nav_bar_group{
     font-size: 1.5rem;
   }
