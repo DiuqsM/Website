@@ -11,16 +11,16 @@ setTimeout(function() {
 function generateMultipleBoxShadow(n) {
     let shadow = '';
     for (let i = 0; i < n; i++) {
-      const x = Math.floor(Math.random() * 2000);
-      const y = Math.floor(Math.random() * 2000);
+      const x = Math.floor(Math.random() * 5000);
+      const y = Math.floor(Math.random() * 5000);
       shadow += `${x}px ${y}px #FFF${i < n - 1 ? ',' : ''}`;
     }
     return shadow;
   }
   
-  document.documentElement.style.setProperty('--shadows-small', generateMultipleBoxShadow(700));
-  document.documentElement.style.setProperty('--shadows-medium', generateMultipleBoxShadow(200));
-  document.documentElement.style.setProperty('--shadows-big', generateMultipleBoxShadow(100));
+  document.documentElement.style.setProperty('--shadows-small', generateMultipleBoxShadow(1400));
+  document.documentElement.style.setProperty('--shadows-medium', generateMultipleBoxShadow(400));
+  document.documentElement.style.setProperty('--shadows-big', generateMultipleBoxShadow(200));
   
   let scrollTimeout;
 

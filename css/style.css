@@ -522,6 +522,13 @@ font-weight: bold;
     font-size: 10rem;
   }
 
+  /* proj */
+  .proj_title{
+    font-size: 3rem;
+  }
+  .proj_text{
+    font-size: 2rem;
+  }
 }
 
 /* below is for the name animation */
