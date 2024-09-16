@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
 html {
-  height: 325%;
   margin: 0;
   padding: 0;
   background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
@@ -81,17 +80,12 @@ section {
   height: 25vh;
 }
 
-.section_title::before {
-  position: absolute;
-  content: '';
-  border-bottom: 16px solid #483eff;
-  width: 7rem;
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  left: 1rem;
-  top: 3.3rem;
-  z-index: -1
+#about_sec_title{
+  text-decoration: underline dotted #483eff;
+}
+
+#proj_sec_title{
+  text-decoration: underline dotted #483eff;
 }
 
 /* title goes here */
@@ -115,6 +109,9 @@ section {
   .about_area {
     flex-direction:column
   }
+  .project_num{
+    flex-direction: column;
+  }
 }
 
 .aboutleft{
@@ -133,7 +130,7 @@ align-items: center
 
 
 .aboutText{
-  line-height: 1.5;
+  line-height: 1.8;
   font-size: 1.25rem;
   justify-content: flex-start;
   align-items: center;
@@ -141,61 +138,6 @@ align-items: center
   margin-left: auto;
   margin-right: auto;
   
-}
-
-/* for different screens */
-@media (max-width: 1000px) {
-  .links {
-    width: 110%;
-  }
-}
-
-@media (max-width: 400px) {
-  .nav_bar{
-    width: 105%;
-  }
-}
-
-@media (max-width: 600px) {
-  /* about */
-  .aboutleft{
-    width: 70%;
-  }
-
-  .aboutText {
-      width: 100%;
-      font-size: 2rem;
-  }
-
-  /* skills */
-  .skills{
-    /* width: 100%; */
-  }
-  .skill_img{
-    width: 60px;
-    height: 60px;  
-  }
-  .skills_List{
-    margin-left: 10%;
-  }
-  .skill_img{
-  }
-  .skill_name{
-    font-size: 10px;
-    }  
-}
-
-@media (max-height: 700px) {
-  .aboutText {
-      width: 100%;
-      font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 700px){
-  .pfp{
-    width: 100%;
-  }
 }
 
 /* skills */
@@ -211,7 +153,6 @@ align-items: center
   flex-direction: row;
   justify-content: center;
   border-radius: 10px;
-  margin-right: 5%;
 }
 
 .skills_List:not(:last-child) {
@@ -230,6 +171,18 @@ align-items: center
   height: 70%;
 }
 
+@media (max-width: 900px) {
+  .skills{
+    justify-content: center;
+  }
+  .skills_item{
+    width: 12rem;
+  }
+  .skill_name{
+    font-size: 2rem;
+  }
+}
+
 /* navbar */
 .nav_bar {
   position: sticky;
@@ -238,7 +191,7 @@ align-items: center
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 3rem;
+  height: 4rem;
   width: 100%;
   border-bottom: 1px solid #1a1a1a;
   background-color: rgba(40,40,40,0.95);
@@ -279,35 +232,41 @@ align-items: center
   display: flex;
   height: 100%;
   width: 100%;
-  margin-left: 10%;
   justify-content: space-between;
 }
 
 .project_left{
-  width: 30%;
+  width: 40%;
   justify-content: center;
+  display: flex;
   /* to prevennt stars from overlapping the images */
   z-index: 10;
 }
 
+.proj_info{
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .proj_title{
-justify-content: flex-start;
-align-items: center;
-
- margin-left: auto;
- margin-right: auto;
+font-weight: bold;
  font-size: 1.5rem;
- width: 75%;
+ width: 100%;
 }
 
 .proj_text{
   font-size: 1rem;
-  justify-content: flex-start;
-  align-items: center;
-  width: 70%;
+  width: 100%;
+  line-height: 1.5;
+  margin-top: 5%;
+}
+.proj_info_link{
+  margin-top: 2.5%;
+  border: 5px solid #483eff;
+  border-radius: 2px;
+  width: 20%;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .project_right{
@@ -330,6 +289,30 @@ align-items: center;
   height: 100%;
 }
   
+@media (max-width: 1000px) {
+  .project_num{
+    flex-direction: column;
+  }
+  .project_left{
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+  .proj_info{
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }  
+  .proj_text{
+    width: 100%;
+  }
+  .proj_title{
+    width: 100%;
+  }
+}
+
+
 /* links for contacts */
 .links {
   background-color: #2c2b2b;
@@ -348,7 +331,7 @@ align-items: center;
 .image-container {
   display: inline-block;
   width: 100%;
-  padding: 20px;
+  text-decoration: underline #2c2b2b;
 }
 
 .link_img:hover {
@@ -381,6 +364,164 @@ align-items: center;
 
 .button_text:hover{
   color: #f7ff0c; 
+}
+
+/* small devices */
+@media (min-width: 301px) and (max-width: 501px) {
+  .aboutText{
+    font-size: 2rem;
+    width: 100%;
+  }
+
+  /* nav */
+  .nav_bar_group{
+    font-size: 1.5rem;
+  }
+  /* proj */
+  .section_title{
+    height: 15vh;
+  }
+  .project_left{
+    width: 100%;
+  }
+  .proj_title{
+    width: 100%;
+    font-size: 2.5rem;
+  }
+  .proj_text{
+    font-size: 2rem;
+  }
+  .proj_info_link{
+    font-size: 2rem;
+  }
+  .project_right{
+    width: 90%;
+  }
+  .proj_img_box{
+    width: 100%;
+  }
+}
+
+/* medium devices */
+ @media (min-width: 501px) and (max-width: 900px) {
+  .aboutText{
+    font-size: 2.5rem;
+  }
+
+  /* nav */
+  .nav_bar_group {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav_bar {
+    height: 6rem;
+  }
+  .nav_bar_group{
+    font-size: 2rem;
+  }
+  /* proj */
+  .projects{
+    min-height: 80vh;
+  }
+  .section_title{
+    height: 15vh;
+  }
+  .project_left{
+    width: 100%;
+  }
+  .proj_title{
+    width: 100%;
+    font-size: 2.5rem;
+  }
+  .proj_text{
+    font-size: 2rem;
+  }
+  .proj_info_link{
+    font-size: 2rem;
+  }
+  .project_right{
+    width: 90%;
+  }
+  .proj_img_box{
+    width: 100%;
+  }
+}
+
+/* large devices */
+@media (min-width: 901px) and (max-width: 1500px) {
+  .about{
+    min-height: 90vh;
+  }
+  .aboutText{
+    font-size: 2rem;
+  }
+
+  /* nav */
+  .nav_bar_group {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav_bar {
+    height: 8rem;
+  }
+  .nav_bar_group{
+    font-size: 2rem;
+  }
+
+  /* skills */
+  .skills{
+    justify-content: center;
+  }
+  .skills_item{
+    width: 15rem;
+  }
+  .skill_name{
+    font-size: 3rem;
+  }
+
+  /* proj */
+  .projects{
+    min-height: 100vh;
+  }
+  .section_title{
+    height: 15vh;
+  }
+  .proj_title{
+    width: 100%;
+    font-size: 2.5rem;
+  }
+  .proj_text{
+    font-size: 2rem;
+  }
+  .proj_info_link{
+    font-size: 2rem;
+  }
+}
+
+/* large devices */
+@media (min-width: 2000px) {
+  /* about */
+  .aboutText{
+    font-size: 2rem;
+  }
+  .skills_item{
+    width: 20rem;
+  }
+  .skill_name{
+    font-size: 2rem;
+  }
+
+  /* nav */
+  .nav_bar {
+    height: 12rem;
+  }
+  .nav_bar_group{
+    font-size: 3rem;
+  }
+  .section_title{
+    font-size: 10rem;
+  }
+
 }
 
 /* below is for the name animation */
